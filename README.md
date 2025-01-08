@@ -1,2 +1,2 @@
-# Masca
+# MASCA
 Library Management System
