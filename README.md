@@ -1,8 +1,9 @@
 # MASCAA 
 Library Management System
-Authors - chirag
-        - Anant
-        - Akash
-        - Saksham
-        - Mahathi
-        - Arth
+<br>
+Authors - chirag <br>
+        - Anant <br>
+        - Akash <br>
+        - Saksham <br>
+        - Mahathi <br>
+        - Arth <br>
