@@ -1,7 +1,13 @@
 import React from 'react'
+import { TodoItem } from './TodoItem'
 
 export const Todos = () => {
   return (
-    <div>Todos</div>
+    <>
+    <div className="container">
+    <h1>TO-DO's</h1>
+    <TodoItem/>
+    </div>
+    </>
   )
 }
