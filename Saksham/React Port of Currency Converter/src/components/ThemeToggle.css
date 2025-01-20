@@ -1,0 +1,25 @@
+#themetoggle {
+    display: flex;
+    font-size: 25px;
+    width: 2em;
+    height: 2em;
+    background-image: url(moon.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+}
+
+#themetoggle:hover {
+    opacity: 0.7;
+}
+
+.dark-mode {
+    filter: invert();
+}
+
+#themetoggle.light {
+    background-image: url('sun.jpg');
+}

@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    color: white;
+    background-color: #1b263b;
+    padding: 0px 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+h1 {
+    font-family: Orbitron, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 15px 0px;
+}

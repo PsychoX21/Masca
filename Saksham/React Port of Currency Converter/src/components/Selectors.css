@@ -1,0 +1,21 @@
+.amount {
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-self: center;
+}
+
+input {
+    font-size: 35px;
+    font-family: Roboto Mono;
+    border-radius: 10px;
+    border-width: 0;
+}
+
+label {
+    font-family: Funnel Sans;
+}
