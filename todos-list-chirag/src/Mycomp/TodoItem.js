@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useState } from 'react'
 export const TodoItem = (props) => {
 
   // let idstyling={
@@ -13,14 +13,22 @@ export const TodoItem = (props) => {
   //   position:"relative"
   // }
 
+  const edittodo = (e) =>{
+    e.preventDefault();
+    props.edittodo(props.todo.id, title, text)
+  }
+
+
+  let [text, Newtext] = useState(props.todo.text)
+  let [title, Newtitle] = useState(props.todo.title)
   return (
     <>
     <div className='container border my-2'>
-    <h4 className='mt-3'>{props.todo.title}</h4>
+    <textarea className='border-0 mt-3 h4' rows={1} value={title} onChange={(e)=>Newtitle(e.target.value)}></textarea>
     {/* <span  style={idstyling}>{props.todo.id}</span> */}
-    <textarea className='container' rows={8} defaultValue={props.todo.text}></textarea>
+    <textarea className='container' rows={8} value={text} onChange={(e)=>Newtext(e.target.value)}></textarea>
     <button className="btn btn-danger mb-3" onClick={props.onDelete}>Delete</button>
-    <button className="btn btn-primary mx-3 mb-3">Save Changes</button>
+    <button className="btn btn-primary mx-3 mb-3" onClick={edittodo}>Save Changes</button>
     </div>
     </>
   )

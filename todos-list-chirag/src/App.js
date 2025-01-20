@@ -19,6 +19,14 @@ function App() {
   }
   
   const [todos, setTodos] = useState(inittodo);
+
+  const Edittodo = (id, updatedTitle, updatedText) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, title: updatedTitle, text: updatedText } : todo
+      )
+    );
+  };
   
   const Addtodo =(title, text)=>{
     let id;
@@ -47,21 +55,26 @@ function App() {
       path:"/",
       element: (
         <>
+        <Header title="To-Do's List" searchbar={false}/>
         <Todoadder addtodo={Addtodo}/>
-        <Todos todos = {todos} onDelete={onDelete}/>
+        <Todos todos = {todos} onDelete={onDelete} edittodo={Edittodo}/>
         <Footer/>
         </>
       )
     },
     {
       path:"/about",
-      element:<About/>
+      element: (
+        <>
+        <Header title="To-Do's List" searchbar={false}/>
+        <About/>
+        </>
+      )
     }
   ])
   return (
     // my close in tags can be simple opening closing tag
     <>
-    <Header title="To-Do's List" searchbar={false}/>
     <RouterProvider router = {router}/>
     </>
   );
