@@ -4,9 +4,12 @@ import Header from './Mycomp/Header';
 import { Todos } from './Mycomp/Todos';
 import { Footer } from './Mycomp/Footer';
 import { Todoadder } from './Mycomp/Todoadder';
+import { About } from './Mycomp/About';
 import { useState , useEffect} from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
+  
   let inittodo;
   if(localStorage.getItem("Todos")===null){
     inittodo=[];
@@ -16,7 +19,7 @@ function App() {
   }
   
   const [todos, setTodos] = useState(inittodo);
-
+  
   const Addtodo =(title, text)=>{
     let id;
     if(todos.length === 0){
@@ -27,7 +30,7 @@ function App() {
     }
     setTodos([...todos, {id: id, title:title, text:text}])
   }
-
+  
   const onDelete = (remove) =>{
     let updatedTodos = todos.filter((item) => item.id !== remove);
     setTodos(updatedTodos);
@@ -35,17 +38,31 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("Todos", JSON.stringify(todos))
-
+    
   }, [todos])
   
-
+  
+  const router = createBrowserRouter([
+    {
+      path:"/",
+      element: (
+        <>
+        <Todoadder addtodo={Addtodo}/>
+        <Todos todos = {todos} onDelete={onDelete}/>
+        <Footer/>
+        </>
+      )
+    },
+    {
+      path:"/about",
+      element:<About/>
+    }
+  ])
   return (
     // my close in tags can be simple opening closing tag
     <>
     <Header title="To-Do's List" searchbar={false}/>
-    <Todoadder addtodo={Addtodo}/>
-    <Todos todos = {todos} onDelete={onDelete}/>
-    <Footer/>
+    <RouterProvider router = {router}/>
     </>
   );
 }
