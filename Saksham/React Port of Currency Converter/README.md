@@ -29,10 +29,9 @@ A fully functional currency converter web application built using **React**. Thi
 
 To set up the project locally, follow these steps:
 
-1. Clone this repository:
-   cd currency-converter-react
-2. Install Dependencies
+1. Change Directory.
+2. Install Dependencies:
    bun install
-3. Start
+3. Start:
    bun dev
 4. Open your browser and navigate to http://localhost:5173.
