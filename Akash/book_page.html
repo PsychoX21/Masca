@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Information</title>
+    <link rel="stylesheet" href="book_page.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+    <div style="background-color: lightgreen; height:10px; "> </div>
+
+    <div class="container">
+        <div class="book-image">
+            <img src="book_cover.jpg" alt="Book Cover" width="150px" height="300px">  </div>
+        <div class="book-details">
+            <h1>Description</h1>
+            <p>P.W. Atkins and Renderson's Papers on Physical Chemistry</p>
+            <p><strong>Availability:</strong> YES</p>
+            <p><strong>Location:</strong> Shelf A, Row II</p>
+            
+        </div>
+    </div>
+    <div class="buttons">
+        <button>Check-In</button>
+        <button>Rated: 4.39/5.0</button>
+        <button>Add to cart</button>
+    </div>
+
+    <div class="review-section">
+        <p><b>Add a review about this book here </b></p>
+        <textarea placeholder="Write your review..."></textarea>
+        <div class="radio-buttons">
+            <label><input type="radio" name="rating" value="1"> I</label>
+            <label><input type="radio" name="rating" value="2">II </label>
+            <label><input type="radio" name="rating" value="3">III </label>
+            <label><input type="radio" name="rating" value="4">IV </label>
+            <label><input type="radio" name="rating" value="5"> V</label>
+        </div>
+        <input  placeholder="Previous review... " type="text" id="own">
+    </div>
+
+</body>
+</html>
