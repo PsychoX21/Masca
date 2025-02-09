@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ the_book.book_name }}</title>
+</head>
+<body>
+    <h1>{{ the_book.book_name }}</h1>
+    {% if the_book.cover_page %}
+        <img src="{{ the_book.cover_page.url }}" alt="Cover page of {{ the_book.book_name }}">
+    {% endif %}
+    <p><strong>Author:</strong> {{ the_book.author_name }}</p>
+    <p><strong>Published Year:</strong> {{ the_book.published_year }}</p>
+    <p><strong>Subject:</strong> {{ the_book.subject }}</p>
+    <p><strong>Availability:</strong> {% if the_book.available_copies > 0 %}Yes{% else %}No{% endif %}</p>
+    <p><strong>Location:</strong> {{ the_book.location }}</p>
+    <p><strong>Rating:</strong> {{ the_book.avg_rating }}</p>
+    <p><strong>Total Copies:</strong> {{ the_book.total_copies }}</p>
+    <p><strong>Available Copies:</strong> {{ the_book.available_copies }}</p>
+
+    {% if user.is_authenticated %}
+    {% if the_book.available_copies > 0 %}
+        <a href="{% url 'take_book' the_book.id %}">Take Book</a>
+    {% else %}
+        <a href="{% url 'return_book' the_book.id %}">Return Book</a>
+    {% endif %}
+    {% endif %}
+
+    {% if user.is_authenticated %}
+
+            {% if user_rated %}
+                <h3>Your Rating: {{user_rating.score}} </h3>
+                
+            {% else %}
+                {% comment %} <h3>Rate this Book</h3> {% endcomment %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ rating_form.as_p }}
+                    <button type="submit" name="rating">Submit Rating</button>
+                </form>
+            {% endif %}
+
+            {% if user_reviewed %}
+                <h3>Your Review:</h3>
+                <p>{{ user_review.review_text }}</p>
+                <small>Reviewed on: {{ user_review.created_at }}</small>
+            {% else %}
+                {% comment %} <h3>Write a Review</h3> {% endcomment %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ review_form.as_p }}
+                    <button type="submit" name="review">Submit Review</button>
+                </form>
+            {% endif %}
+    {%else%} 
+
+    <a href="/login">login to rate</a>
+
+    {% endif %}
+
+
+
+    <h3>Reviews</h3>
+    {% if the_book.reviews.all %}
+        <ul>
+            {% for review in the_book.reviews.all %}
+                <li>
+                    <strong>{{ review.the_user.username }}</strong> 
+                    {% if review.review_text %}
+                        <p>{{ review.review_text }}</p>
+                    {% endif %}
+                    <small>Reviewed on: {{ review.created_at }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
+
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message">
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

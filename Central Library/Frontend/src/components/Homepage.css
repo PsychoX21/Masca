@@ -1,0 +1,142 @@
+.homebody{
+    margin: 0;
+    padding: 0;
+    background-image: url(../assets/bookshelf.png);
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(254, 250, 224);
+}
+
+.announcement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:start;
+    height:30%;
+    width: 33%;
+    background-color: #92b775b8;
+    position : absolute;
+    top:20vh;
+    right: 13vw;
+    border: 10px solid #1F3C1F;
+    border-radius: 30px;
+}
+
+.updates{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 7px;
+}
+
+.heading_announcement {
+    margin: 0px;
+}
+
+.announcementslist {
+    margin: 0px;
+    padding: 0px;
+}
+
+.annhead{
+    margin-top:4px;
+}
+
+.logo{
+    height: 26vh;
+    position: absolute;
+    top:40.5vh;
+    right:51vw;
+}
+
+.welcometext{
+    position: absolute;
+    top: 27vh;
+    left: 14vw;
+}
+
+.welcometext *{
+    font-weight: bold;
+}
+
+.clib{
+    color: #43182F;
+}
+
+.timing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 18vh;
+    left:16vw;
+}
+
+.timing *{
+    color:#1F3C1F;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.line{
+    height: 22vh;
+    width: 0.5px;
+    border: 0.5px solid black;
+}
+
+.upline{
+    position: absolute;
+    left: 41.5vw;
+    top: 13vh;
+}
+
+.lowline{
+    position: absolute;
+    left: 41.5vw;
+    bottom: 8vh;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right:13.5vw;
+    top:60vh;
+}
+
+.find, .map{
+    position: relative;
+    height: 8vh;
+    width: 32vw;
+    background-color: #C7DDB5b8;
+    margin: 15px 0px;
+    border: 5px solid #43182F;
+    border-radius: 22px;
+    font-size:x-large;
+    font-weight: bolder;
+}
+
+.search{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left:16px;
+    top:11px;
+}
+
+.ellipses *{
+    height:15px;
+    margin: 0px 4px;
+}
+
+.ellipses{
+    position: absolute;
+    right: 24vw;
+    top:50vh
+}

@@ -1,0 +1,23 @@
+.navbar{
+    box-sizing: border-box;
+    height: 9vh;
+    background-color: #133215;
+    border-bottom: 20px solid #92B775;
+}
+.nav-item{
+    box-sizing: border-box;
+    width: 263px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    border-radius: 10px;
+    color: #FEFAE0
+}
+
+.nav-link{
+    font-weight: 600; 
+    font-family: sans-serif;  
+    letter-spacing: 0.5px;
+    color:inherit
+}

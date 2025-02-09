@@ -1,0 +1,18 @@
+.mappage{
+    height: 100vh;
+    width: 100vw;
+    background-color: #E4F8FF;
+}
+
+.mapimg{
+    height: 88vh;
+    width: 80vw;
+}
+
+.mapimgdiv{
+    margin: 0vh 10vw;
+}
+
+.maphead{
+    margin: 20px 0px;
+}

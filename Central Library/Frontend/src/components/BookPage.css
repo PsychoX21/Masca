@@ -1,0 +1,153 @@
+.book-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #FEFAE0;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FFF6B9;
+    border-radius: 20px;
+    width: 80%;
+    height: 33%;
+    align-self: center;
+    margin: 20px;
+}
+
+.book-cover {
+    height: 90%;
+    width: 20%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.book-cover img {
+    object-fit: contain;
+    max-width: 95%;
+    max-height: 95%;
+    align-self: center;
+}
+
+.book-details {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-details p {
+    margin: 7px;
+    padding: 0;
+    font-size: 18px;
+}
+
+.book-details h1 {
+    margin: 20px 0px 15px 0px;
+    font-size: 40px;
+}
+
+.bookbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.bookbuttons button {
+    background-color: #B45A30;
+    color: white;
+    padding: 10px 7%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 28px;
+    transition: background-color 0.3s ease;
+}
+
+.bookbuttons button:hover {
+    background-color: #984216;
+}
+
+.bookreview-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #FFF6B9;
+    width: 85%;
+    height: 35%;
+    align-self: center;
+    max-height: 40vh;
+    min-height: 10vh;
+}
+
+.bookreview-section p {
+    margin: 7px;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.bookreview-self {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+}
+
+.bookreview-self textarea {
+    width: 80%;
+}
+
+.bookreview-self button {
+    background-color: #00bFFF;
+    color: black;
+    width: 12%;
+    height: 70%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.bookreview-self button:hover {
+    background-color: #008FFF;
+    color: white;
+}
+
+.rating-section {
+    display: flex;
+}
+
+.star-rating {
+    display: flex;
+    font-size: 24px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.star {
+    color: gray;
+    transition: color 0.2s;
+}
+
+.star.filled {
+    color: #FFD700;
+}
+
+.star:hover,
+.star.hovered {
+    color: #FFA500;
+}
