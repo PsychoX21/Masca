@@ -33,12 +33,9 @@ class User(AbstractUser):
     user_permissions = models.ManyToManyField('auth.Permission', related_name='user_permissions')
 
     def save(self, *args, **kwargs):
-        """Ensure password is hashed before saving."""
-
         if self.pk is None and not self.password.startswith('pbkdf2_sha256$'):
             self.password = make_password(self.password)
 
-    # Assign superuser and staff status based on user_type
         if self.user_type == "admin":
             self.is_superuser = True
             self.is_staff = True
@@ -48,7 +45,6 @@ class User(AbstractUser):
 
         super().save(*args, **kwargs)
 
-        # Assign default group based on user type
         group_name = "Admin" if self.user_type == "admin" else "User"
         group, _ = Group.objects.get_or_create(name=group_name)
         self.groups.add(group)

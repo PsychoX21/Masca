@@ -60,10 +60,8 @@ def user_register(request):
         address_ = request.POST.get("address")
         referral_ = request.POST.get("referral", "")
 
-        # Access uploaded file (profile photo)
         profile_photo_ = request.FILES.get("profile_photo")
 
-        # Check if user already exists
         if User.objects.filter(username=username_).exists():
             return JsonResponse({"error": "User already exists"}, status=400)
         

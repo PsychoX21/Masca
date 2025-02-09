@@ -12,9 +12,9 @@ const AuthPage = () => {
     const storedUser = localStorage.getItem("user");
 
     if (storedUser) {
-      navigate("/home"); // Redirect if user exists
+      navigate("/home");
     } else {
-      setLoaded(true); // Triggers effect after mount
+      setLoaded(true);
     }
   }, [navigate]);
 

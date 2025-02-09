@@ -77,7 +77,7 @@ const LoginPage = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setLoaded(true); // Triggers effect after mount
+    setLoaded(true);
   }, []);
 
   return (

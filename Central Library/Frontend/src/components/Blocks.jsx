@@ -60,7 +60,7 @@ border-radius: 50%;
 `;
 
 const EditOverlay = styled.div.withConfig({
-  shouldForwardProp: (prop) => prop !== 'show' // Don't forward 'show' to the DOM
+  shouldForwardProp: (prop) => prop !== 'show'
 })`
 position: absolute;
 top: 50%;

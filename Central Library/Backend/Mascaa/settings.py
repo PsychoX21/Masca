@@ -44,26 +44,25 @@ INSTALLED_APPS = [
     'corsheaders',#for integration
 ]
 
-CORS_ALLOW_CREDENTIALS = True  # Allow cookies & authentication headers
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Add your frontend URL
+    "http://localhost:5173",
 ]
 
-SESSION_COOKIE_SAMESITE = None  # Ensures cookies work across different ports (e.g., 3000 <-> 8000)
-SESSION_COOKIE_SECURE = False   # Set to True in production if using HTTPS
-CSRF_COOKIE_SAMESITE = None     # Ensures CSRF token works properly
+SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SAMESITE = None
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",  # Ensure CSRF protection allows the frontend
+    "http://localhost:5173",
 ]
 
 import os
 
 LOGIN_URL = "/login/"
 
-# Media settings for file uploads
 MEDIA_URL = '/media/'  
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # File system path where media files will be stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -162,4 +161,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-AUTH_USER_MODEL = 'backend.User'  # Point Django to  User model
+AUTH_USER_MODEL = 'backend.User'
